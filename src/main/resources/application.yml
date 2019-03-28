@@ -1,0 +1,110 @@
+# 数据源基础配置
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/halo
+    username: root
+    password: root
+
+#jpa setting
+  jpa:
+    show-sql: true
+    # jode time use
+    properties:
+        jadira:
+          usertype:
+          autoRegisterUserTypes: true
+    # data - jpa
+    hibernate:
+        ddl-auto: update
+    #生成ddl
+    generate-ddl: true
+    #开启opensession
+    open-in-view: true
+  #freemarker
+  freemarker:
+    settings:
+      object_wrapper: com.hansholdings.basic.utils.FreemarkerObjectWrapper
+      datetime_format: yyyy-MM-dd HH:mm:ss
+      date_format: yyyy-MM-dd
+      time_format: HH:mm:ss
+    cache : false
+
+  http:
+    multipart:
+      max-file-size: 50Mb
+  cache:
+    ehcache:
+      config: classpath:ehcache.xml
+    type: EHCACHE
+    
+#shiro
+shiro:
+  realm: com.hansholdings.authorization.shiro.realm.UserRealm
+  login-url: /login.html
+  success-url: /index.html
+  unauthorized-url: /
+   #filter chian
+  filterChainDefinitions:  
+    "/login": anon
+    "/login/**": anon
+    "/logout": logout
+    "/css/**": anon
+    "/fonts/**": anon
+    "/img/**": anon
+    "/js/**": anon
+    "/exportFile/**": anon
+    "/landary/**": anon
+    "/doc.html": anon
+   # "/swagger-ui.html": anon
+    "/webjars/**": anon
+    "/swagger-resources/**": anon
+    "/v2/api-docs": anon
+    "/logging/getAdUpInfo/**": anon
+    "/**": authc
+
+    
+# 代码
+server:
+  port: 8088
+ # tomcat:
+  #max-threads: 1000
+#记录日志信息
+logging:
+  config: classpath:logback.xml
+
+# hansholdings.frame.variables 配置
+hansholdings:
+  frame:
+    variables:
+      basename: hansholdings.system
+      default-role: 3
+
+#AD域相关信息
+ad:
+  #username: administrator@hansholdings.com  #账号
+  username: adweb@hansholdings.com
+
+  #password: Kgitad123@    #密码
+
+  password: hans123
+  #ldapURL: LDAP://172.18.254.210:389   #LDAP服务器地址
+  ldapURL: LDAPS://172.18.254.210:636   #LDAP服务器地址
+  hansRootOu : OU=大族集团
+  disableRootOu : OU=禁用
+  keystore : D:\\Program Files\\Java\\jdk1.8.0_111\\bin\\security51.keystore
+  keyPassword : 123456
+  baseDN : DC=hansholdings,DC=com
+  landaryUsername : landary
+  landaryPassword : landary123
+
+#Excel导入表头
+
+adUserUpload: name,userPrincipalName,distinguishedName,sAMAccountName,initials,telephoneNumber,mail,userAccountControl,physicalDeliveryOfficeName,unicodePwd
+updateUserUpload: distinguishedName,telephoneNumber,mail,physicalDeliveryOfficeName
+pwdUserUpload: distinguishedName,unicodePwd
+userobject: name,userPrincipalName,userAccountControl,distinguishedName,sAMAccountName,mail,telephoneNumber,physicalDeliveryOfficeName, initials,pwdLastSet
+opLogObject: userName,operateStype,serviceStype,originalValue,currentValue,operationTime
+
+

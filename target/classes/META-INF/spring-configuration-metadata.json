@@ -1,0 +1,57 @@
+{
+  "hints": [],
+  "groups": [
+    {
+      "sourceType": "com.hansholdings.autoconfigure.frame.FrameVariablesInterceptor",
+      "name": "hansholdings.frame",
+      "type": "com.hansholdings.autoconfigure.frame.FrameVariablesInterceptor"
+    },
+    {
+      "sourceType": "com.hansholdings.autoconfigure.shiro.ShiroProperties",
+      "name": "shiro",
+      "type": "com.hansholdings.autoconfigure.shiro.ShiroProperties"
+    }
+  ],
+  "properties": [
+    {
+      "sourceType": "com.hansholdings.autoconfigure.frame.FrameVariablesInterceptor",
+      "name": "hansholdings.frame.variables",
+      "type": "java.util.Map<java.lang.String,java.lang.String>"
+    },
+    {
+      "sourceType": "com.hansholdings.autoconfigure.shiro.ShiroProperties",
+      "name": "shiro.ehache-config",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.hansholdings.autoconfigure.shiro.ShiroProperties",
+      "name": "shiro.filter-chain-definitions",
+      "description": "filter chain",
+      "type": "java.util.Map<java.lang.String,java.lang.String>"
+    },
+    {
+      "sourceType": "com.hansholdings.autoconfigure.shiro.ShiroProperties",
+      "name": "shiro.login-url",
+      "description": "URL of login",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.hansholdings.autoconfigure.shiro.ShiroProperties",
+      "name": "shiro.realm",
+      "description": "Custom Realm",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.hansholdings.autoconfigure.shiro.ShiroProperties",
+      "name": "shiro.success-url",
+      "description": "URL of success",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.hansholdings.autoconfigure.shiro.ShiroProperties",
+      "name": "shiro.unauthorized-url",
+      "description": "URL of unauthorized",
+      "type": "java.lang.String"
+    }
+  ]
+}

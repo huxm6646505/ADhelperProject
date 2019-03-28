@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="adusermanage:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="adusermanage-0.0.1-SNAPSHOT.war">
+      <element id="artifact" artifact-name="adusermanage:war exploded" />
+    </root>
+  </artifact>
+</component>
